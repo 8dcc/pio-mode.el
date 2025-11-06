@@ -1,0 +1,30 @@
+#+TITLE: PIO Mode
+#+AUTHOR: 8dcc
+
+*Major mode for editing [[https://www.raspberrypi.com/news/what-is-pio/][PIO]] assembly files.*
+
+This package provides two major modes for editing PIO assembly files.  First,
+=pio-mode=, which inherits from =asm-mode= and highlights the base assembly syntax.
+Second, =poly-pio-mode=, built on top of the [[https://github.com/polymode/polymode][polymode]] package, which adds support
+for the embedded C blocks.
+
+The Programable I/O state machines were originally developed for the RP2040
+microcontroller by Raspberry Pi. Through /bit-banging/, they allow the programmer
+to interact with existing or new hardware interfaces efficiently.
+
+* Installing
+
+This package is not available in Melpa, but you can install it with
+=package-vc-install=:
+
+#+begin_src emacs-lisp
+(package-vc-install "https://github.com/8dcc/pio-mode.el")
+#+end_src
+
+Alternatively, if you are using [[https://github.com/radian-software/straight.el][straight.el]], you can specify the recipe with
+=straight-use-package=:
+
+#+begin_src emacs-lisp
+(straight-use-package
+ '(pio-mode :type git :host github :repo "8dcc/pio-mode.el"))
+#+end_src
